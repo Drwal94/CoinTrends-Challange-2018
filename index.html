@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charsest="utf-8">
+        <meta name="viewport" content="width=device-width, initial scale=1"> 
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+        <!-- Popper JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+        <style>
+            div.border {
+                padding: 6px;
+                margin: 6px;
+            }
+            body {
+                width: 1200px;
+            }
+            img {
+                width: 50px;
+            }
+            img.logo {
+                height: 100px;
+                width: auto;
+            }
+        </style>
+    </head>
+    <body class="mx-auto">
+        <header>
+            <img src="img/kainos-logo-sticky.png" class="logo">
+        </header>
+        
+        <section id="main">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        Which cryptocurrency you want to choose?<br>
+                        <button type="button" class="btn btn-outline-primary btn-sm active" onclick="currencyButton('BTCUSD')" id="btcButton">Bitcoin</button>
+                        <button type="button" class="btn btn-outline-primary btn-sm" onclick="currencyButton('ETHUSD')" id="ethButton">Ethereum</button>
+                        <button type="button" class="btn btn-outline-primary btn-sm" onclick="currencyButton('LTCUSD')" id="ltcButton">Litcoin</button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        Which chart time range you want to chose?<br>
+                        <button type="button" class="btn btn-outline-primary btn-sm active" onclick="rangeButton('daily')" id="dailyButton">daily</button>
+                        <button type="button" class="btn btn-outline-primary btn-sm" onclick="rangeButton('monthly')" id="monthlyButton">monthly</button>
+                        <button type="button" class="btn btn-outline-primary btn-sm" onclick="rangeButton('alltime')" id="alltimeButton">alltime</button>
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <canvas id="trendChart" ></canvas>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <button type="button" class="btn btn-outline-secondary btn-sm" onclick="trendButton()" id="trendButton">Draw trend line</button>
+                    </div>
+                </div>
+                <div class="row" id="boxes">
+            </div>
+        </section>
+        <hr>
+        <footer>
+            <h6>Autor: Maciej Porzeżyński</h6>
+        </footer>
+            
+        <script src="chart_data.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+    </body>
+</html>
